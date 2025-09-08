@@ -44,6 +44,53 @@ class InputEmbeddings(nn.Module):
         # Multiply by sqrt(d_model) to scale the embeddings according to the paper
         return self.embedding(x) * math.sqrt(self.d_model)
     
+def apply_rope(x, sin, cos):
+    # x: (batch, h, seq_len, d_k)
+    # sin, cos: (seq_len, d_k)
+    # Only works if d_k is even
+    print("x shape:", x.shape)
+    print("sin shape:", sin.shape)
+    print("cos shape:", cos.shape)
+    x1 = x[..., ::2]
+    x2 = x[..., 1::2]
+    sin = sin.unsqueeze(0).unsqueeze(0)  # (1, 1, seq_len, d_k//2)
+    cos = cos.unsqueeze(0).unsqueeze(0)
+    x_rope = torch.cat([x1 * cos - x2 * sin, x1 * sin + x2 * cos], dim=-1)
+    return x_rope
+
+
+class RotaryPositionalEncoding(nn.Module):
+    def __init__(self, d_k, max_seq_len):
+        super().__init__()
+        assert d_k % 2 == 0, "RoPE requires even d_k"
+        self.d_k = d_k
+        self.max_seq_len = max_seq_len
+        inv_freq = 1.0 / (10000 ** (torch.arange(0, d_k // 2).float() / d_k))
+        self.register_buffer("inv_freq", inv_freq)
+
+    def forward(self, seq_len):
+        pos = torch.arange(seq_len, device=self.inv_freq.device).type_as(self.inv_freq)
+        sinusoid_inp = torch.einsum("i,j->ij", pos, self.inv_freq)
+        sin = sinusoid_inp.sin()
+        cos = sinusoid_inp.cos()
+        return sin, cos
+    
+class RelativePositionBias(nn.Module):
+    def __init__(self, num_heads, max_seq_len):
+        super().__init__()
+        self.num_heads = num_heads
+        self.max_seq_len = max_seq_len
+        self.relative_bias = nn.Parameter(torch.zeros(num_heads, 2 * max_seq_len - 1))
+        nn.init.zeros_(self.relative_bias)
+
+    def forward(self, seq_len):
+        # Returns (num_heads, seq_len, seq_len)
+        context_position = torch.arange(seq_len, dtype=torch.long)[:, None]
+        memory_position = torch.arange(seq_len, dtype=torch.long)[None, :]
+        relative_position = memory_position - context_position + self.max_seq_len - 1
+        bias = self.relative_bias[:, relative_position]
+        return bias
+    
 class PositionalEncoding(nn.Module):
 
     def __init__(self, d_model: int, seq_len: int, dropout: float) -> None:
@@ -82,7 +129,7 @@ class ResidualConnection(nn.Module):
 
 class MultiHeadAttentionBlock(nn.Module):
 
-    def __init__(self, d_model: int, h: int, dropout: float) -> None:
+    def __init__(self, d_model: int, h: int, dropout: float,use_relative_bias = False,max_seq_len = 350,use_rope = False , rope_module = None) -> None:
         super().__init__()
         self.d_model = d_model # Embedding vector size
         self.h = h # Number of heads
@@ -95,13 +142,21 @@ class MultiHeadAttentionBlock(nn.Module):
         self.w_v = nn.Linear(d_model, d_model, bias=False) # Wv
         self.w_o = nn.Linear(d_model, d_model, bias=False) # Wo
         self.dropout = nn.Dropout(dropout)
+        self.use_relative_bias = use_relative_bias
+        self.use_rope = use_rope
+        self.rope_module = rope_module
+        if use_relative_bias:
+            self.relative_bias = RelativePositionBias(h , max_seq_len)
 
     @staticmethod
-    def attention(query, key, value, mask, dropout: nn.Dropout):
+    def attention(query, key, value, mask, dropout: nn.Dropout , relative_bias = None):
         d_k = query.shape[-1]
         # Just apply the formula from the paper
         # (batch, h, seq_len, d_k) --> (batch, h, seq_len, seq_len)
         attention_scores = (query @ key.transpose(-2, -1)) / math.sqrt(d_k)
+        # relative positional embedding
+        if relative_bias is not None:
+            attention_scores = attention_scores + relative_bias.unsqueeze(0)
         if mask is not None:
             # Write a very low value (indicating -inf) to the positions where mask == 0
             attention_scores.masked_fill_(mask == 0, -1e9)
@@ -122,8 +177,21 @@ class MultiHeadAttentionBlock(nn.Module):
         key = key.view(key.shape[0], key.shape[1], self.h, self.d_k).transpose(1, 2)
         value = value.view(value.shape[0], value.shape[1], self.h, self.d_k).transpose(1, 2)
 
+        # RoPE logic
+        if self.use_rope and self.rope_module is not None:
+            seq_len = q.size(1)
+            sin, cos = self.rope_module(seq_len)  # (seq_len, d_k//2)
+            query = apply_rope(query, sin, cos)
+            key = apply_rope(key, sin, cos)
+
+        relative_bias = None
+        if self.use_relative_bias:
+            seq_len = q.size(1)
+            relative_bias  = self.relative_bias(seq_len)
+
+
         # Calculate attention
-        x, self.attention_scores = MultiHeadAttentionBlock.attention(query, key, value, mask, self.dropout)
+        x, self.attention_scores = MultiHeadAttentionBlock.attention(query, key, value, mask, self.dropout , relative_bias)
         
         # Combine all the heads together
         # (batch, h, seq_len, d_k) --> (batch, seq_len, h, d_k) --> (batch, seq_len, d_model)
@@ -223,10 +291,42 @@ class Transformer(nn.Module):
         # (batch, seq_len, vocab_size)
         return self.projection_layer(x)
     
-def build_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int, tgt_seq_len: int, d_model: int=512, N: int=6, h: int=8, dropout: float=0.1, d_ff: int=2048) -> Transformer:
+class Identity(nn.Module):
+    def forward(self, x):
+        return x
+    
+def build_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int, tgt_seq_len: int, d_model: int=512, N: int=6, h: int=8, dropout: float=0.1, d_ff: int=2048,config=None) -> Transformer:
+
+    d_k = d_model // h
+
     # Create the embedding layers
     src_embed = InputEmbeddings(d_model, src_vocab_size)
     tgt_embed = InputEmbeddings(d_model, tgt_vocab_size)
+
+    pos_encoding_type = config.get("positional_encoding", "absolute") if config else "absolute"
+    if pos_encoding_type == "rope":
+        src_pos = Identity()
+        tgt_pos = Identity()
+        use_relative_bias = False
+        use_rope = True
+        rope_module_src = RotaryPositionalEncoding(d_k, src_seq_len)
+        rope_module_tgt = RotaryPositionalEncoding(d_k, tgt_seq_len)
+    elif pos_encoding_type == "relative_bias":
+        src_pos = Identity()
+        tgt_pos = Identity()
+        use_relative_bias = True
+        use_rope = False
+        rope_module_src = None
+        rope_module_tgt = None
+    else:
+        src_pos = PositionalEncoding(d_model, src_seq_len, dropout)
+        tgt_pos = PositionalEncoding(d_model, tgt_seq_len, dropout)
+        use_relative_bias = False
+        use_rope = False
+        rope_module_src = None
+        rope_module_tgt = None
+
+
 
     # Create the positional encoding layers
     src_pos = PositionalEncoding(d_model, src_seq_len, dropout)
@@ -235,7 +335,7 @@ def build_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int
     # Create the encoder blocks
     encoder_blocks = []
     for _ in range(N):
-        encoder_self_attention_block = MultiHeadAttentionBlock(d_model, h, dropout)
+        encoder_self_attention_block = MultiHeadAttentionBlock(d_model, h, dropout,use_relative_bias , src_seq_len,use_rope,rope_module_src)
         feed_forward_block = FeedForwardBlock(d_model, d_ff, dropout)
         encoder_block = EncoderBlock(d_model, encoder_self_attention_block, feed_forward_block, dropout)
         encoder_blocks.append(encoder_block)
@@ -243,8 +343,8 @@ def build_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int
     # Create the decoder blocks
     decoder_blocks = []
     for _ in range(N):
-        decoder_self_attention_block = MultiHeadAttentionBlock(d_model, h, dropout)
-        decoder_cross_attention_block = MultiHeadAttentionBlock(d_model, h, dropout)
+        decoder_self_attention_block = MultiHeadAttentionBlock(d_model, h, dropout , use_relative_bias , tgt_seq_len,use_rope , rope_module_tgt)
+        decoder_cross_attention_block = MultiHeadAttentionBlock(d_model, h, dropout,use_relative_bias ,src_seq_len,use_rope,rope_module_src)
         feed_forward_block = FeedForwardBlock(d_model, d_ff, dropout)
         decoder_block = DecoderBlock(d_model, decoder_self_attention_block, decoder_cross_attention_block, feed_forward_block, dropout)
         decoder_blocks.append(decoder_block)

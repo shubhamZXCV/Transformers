@@ -3,18 +3,19 @@ from pathlib import Path
 def get_config():
     return {
         "batch_size": 4,
-        "num_epochs": 20,
+        "num_epochs": 10,
         "lr": 10**-4,
         "seq_len": 350,
         "d_model": 512,
         "datasource": 'EUbookshop',
         "lang_src": "fi",
         "lang_tgt": "en",
-        "model_folder": "weights",
+        "model_folder": "weights_rope",
         "model_basename": "tmodel_",
-        "preload": "latest",
+        "preload": None,
         "tokenizer_file": "tokenizer_{0}.json",
-        "experiment_name": "runs/tmodel"
+        "experiment_name": "runs/tmodel_rope",
+        "positional_encoding": "rope",  # Options: "rope", "relative_bias" ,  "absolute"
     }
 
 def get_weights_file_path(config, epoch: str):

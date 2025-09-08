@@ -186,7 +186,7 @@ def get_ds(config):
     return train_dataloader, val_dataloader,test_dataloader, tokenizer_src, tokenizer_tgt
 
 def get_model(config, vocab_src_len, vocab_tgt_len):
-    model = build_transformer(vocab_src_len, vocab_tgt_len, config["seq_len"], config['seq_len'], d_model=config['d_model'])
+    model = build_transformer(vocab_src_len, vocab_tgt_len, config["seq_len"], config['seq_len'], d_model=config['d_model'],config=config)
     return model
 
 def train_model(config):
@@ -210,6 +210,8 @@ def train_model(config):
 
     train_dataloader, val_dataloader,test_dataloder, tokenizer_src, tokenizer_tgt = get_ds(config)
     model = get_model(config, tokenizer_src.get_vocab_size(), tokenizer_tgt.get_vocab_size()).to(device)
+    total_params = sum(p.numel() for p in model.parameters())
+    print(f"Total parameters: {total_params}")
     # Tensorboard
     writer = SummaryWriter(config['experiment_name'])
 
