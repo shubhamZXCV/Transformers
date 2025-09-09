@@ -1,0 +1,185 @@
+Using device: cuda
+Max length of source sentence: 222
+Max length of target sentence: 269
+Total parameters: 85288555
+No model to preload, starting from scratch
+Processing Epoch 00: 100%|██████████| 3334/3334 [32:46<00:00,  1.70it/s, loss=5.435]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: 0 Valittu Ranskan parhaaksi ammattityöntekijäksi. Ansioritarikunnan ritari.
+    TARGET: 0 Received award of 'Best Worker in France'; Knight of the National Order of Merit.
+ PREDICTED: 0 Member of the European Parliament .
+--------------------------------------------------------------------------------
+    SOURCE: Euroopan rahapoliittinen instituutti (Vuosikertomus - Rahapolitiikka) - Talousarvioja rahapolitiikka - ALV
+    TARGET: European Monetary Institute (EMI annual report - Monetary policy) - Budgetary and taxation policy - VAT
+ PREDICTED: Question No 4 by Mr President , on behalf of the European Parliament
+
+Epoch 00 | Train Loss: 5.8439 | Val Loss: 5.3318
+Processing Epoch 01: 100%|██████████| 3334/3334 [32:49<00:00,  1.69it/s, loss=4.720]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Koko lainsäädäntömenettelyn ajan Euroopan parlamentilla oli kaksi tavoitetta: toisaalta "eurooppalaisen tullin" käsitteen tekeminen kansalaisille tutummaksi ja toisaalta valvonnan tehostaminen.
+    TARGET: Throughout the legislative process, the European Parliament has pursued a dual objective: on the one hand, making the concept of a European customs service more visible to citizens, and, on the other, improving the effectiveness of checks.
+ PREDICTED: The European Parliament has a European Parliament to take the opportunity to take the opportunity to take the European Parliament ' s position on the basis of the Treaty .
+--------------------------------------------------------------------------------
+    SOURCE: EUROOPAN KOMISSIO
+    TARGET: EUROPEAN COMMISSION
+ PREDICTED: EUROPEAN PARLIAMENT
+
+Epoch 01 | Train Loss: 5.1477 | Val Loss: 5.0347
+Processing Epoch 02: 100%|██████████| 3334/3334 [32:50<00:00,  1.69it/s, loss=4.979]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Näin ei vielä vähän aikaa sitten oikeastaan ollut.
+    TARGET: We also agree on the objectives.
+ PREDICTED: This is not a question of the problem .
+--------------------------------------------------------------------------------
+    SOURCE: Interpolin ja Europolin välille tarvitaan kehittyneempää yhteistyötä.
+    TARGET: We do not believe that such propaganda measures will yield any positive results.
+ PREDICTED: The Commission ' s proposal is to be taken into account in the future .
+
+Epoch 02 | Train Loss: 4.8703 | Val Loss: 4.8885
+Processing Epoch 03: 100%|██████████| 3334/3334 [32:49<00:00,  1.69it/s, loss=4.419]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Schengenin prosessiin sisältyy se, että sisärajojen valvonnan purkaminen vaatii enemmän huolellisuutta ulkorajojen varmistamisessa.
+    TARGET: We have also expressed concern that this will, in various roundabout ways, result in a more restrictive refugee policy in our country.
+ PREDICTED: The Commission is aware that the new provisions of the Treaty should be applied to the Treaty .
+--------------------------------------------------------------------------------
+    SOURCE: Aika valvontakappaleen n:o 5 lähettämiseen (päivissä)
+    TARGET: Average time to receive copy 5 (in days)
+ PREDICTED: The following documents were published in the Official Journal ( e . g . the application )
+
+Epoch 03 | Train Loss: 4.6707 | Val Loss: 4.8046
+Processing Epoch 04: 100%|██████████| 3334/3334 [32:51<00:00,  1.69it/s, loss=4.082]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Ylempi korkeakoulututkinto (MA), tohtorintutkinto (Oxford). Historioitsija.
+    TARGET: MA D.Phil (Oxford). Historian.
+ PREDICTED: Diploma in the Faculty of Law ( Athens ) ( 1968 ).
+--------------------------------------------------------------------------------
+    SOURCE: Se voisi yhtä hyvin olla neljä, kaksi ja puoli tai vaikkapa nolla prosenttia.
+    TARGET: It could just as well be 4 %, 2 1/2 % or even zero.
+ PREDICTED: It is a very important issue , and it is a question of whether or not the Commission can accept .
+
+Epoch 04 | Train Loss: 4.5058 | Val Loss: 4.7488
+Processing Epoch 05: 100%|██████████| 3334/3334 [32:53<00:00,  1.69it/s, loss=4.376]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Kuten Lenz esitti, me tarvitsemme menettelymallin, joka ulottuu laajemmalle kuin mainos alan vapaaehtoinen valvonta.
+    TARGET: We need a code of conduct - Mrs Lenz described it - that goes further than sçlf-regulation within the advertising profession.
+ PREDICTED: As you know , we are not talking about the problem of unemployment , but we are talking about the whole of Europe .
+--------------------------------------------------------------------------------
+    SOURCE: Kertomukset
+    TARGET: Reports
+ PREDICTED: 
+
+Epoch 05 | Train Loss: 4.3554 | Val Loss: 4.7267
+Processing Epoch 06: 100%|██████████| 3334/3334 [32:53<00:00,  1.69it/s, loss=4.440]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Puhemies kokonaismäärästä, ei ihmisoikeuksia koskevan kohdan alakohdista.
+    TARGET: Your motion was not voted on as it was tabled after the relevant deadline.
+ PREDICTED: The President cannot accept the motion of censure by the Commission .
+--------------------------------------------------------------------------------
+    SOURCE: Parlamentin tavoite saada myös ilmaliikenteen hallinnan toteuttaminen kuulu maan yhden eurooppalaisen elimen alaisuuteen voi olla taloudellisin ratkaisu, mutta kansalliset viranomaiset haluavat pitää ilmatilan hallinnan omissa käsissään.
+    TARGET: Parliament's efforts to get the practicalities of air traffic managed by a single European body may well be the most economic solution, but the national authorities want to retain responsibility for managing their airspace.
+ PREDICTED: The European Parliament also has a major role in the development of a common transit system which is of great importance to the national authorities , but also to the national authorities .
+
+Epoch 06 | Train Loss: 4.2164 | Val Loss: 4.7148
+Processing Epoch 07: 100%|██████████| 3334/3334 [32:55<00:00,  1.69it/s, loss=4.490]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Koska kysymykset nro 13 ja 14 käsittelevät samantapaisia aiheita, niihin vastataan yhteisesti.
+    TARGET: Title B5 which you mentioned relates to specific cases of natural disasters, such as earthquakes, which happened in the past.
+ PREDICTED: As you know , the proposal for a decision on 13 and 14 March is now being put into practice .
+--------------------------------------------------------------------------------
+    SOURCE: Meidän mielestämme ainoastaan Algerian viranomaisten aloite pyrkiä, yhdistämään kaikki kansalaisyhteiskunnan voimat, islamilaiset liikkeet mukaan lukien, antaa mahdol lisuuden päästä sopimukseen väkivallan lopettamisesta sekä ihmisoikeuksien ja kulttuurivähemmistöjen oikeuksien kunnioittamisesta.
+    TARGET: We think that only an initiative on the part of the Algerian authorities, aimed at bringing together all the life blood within civil society, including the Islamic movements, will enable an agreement on the rejection of violence to be reached, based on a respect for human rights and cultural minorities.
+ PREDICTED: We are not in favour of the Algerian Government ' s political leaders , who are in the hands of the people who are in the interest of the political groups and who are in the interests of the people and their families .
+
+Epoch 07 | Train Loss: 4.0831 | Val Loss: 4.7215
+Processing Epoch 08: 100%|██████████| 3334/3334 [32:59<00:00,  1.68it/s, loss=4.403]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Onko huomautettavaa?
+    TARGET: (Applause) I call upon Mrs Seillier.
+ PREDICTED: Are there any comments ?
+--------------------------------------------------------------------------------
+    SOURCE: Siksi Atlantin yli käytävää vuoropuhelua ja Euroopan unionin ja Yhdysvaltojen toimintasuunnitelmaa on aktiivisesti edistettävä.
+    TARGET: The negotiations will undoubtedly be tough, difficult and long, but what they will essentially be about is the question that is deeply rooted in our European culture: how do you reconcile the principle of 'equal opportunities' with the unequal abilities that we are faced with in reality?
+ PREDICTED: This is a very important issue , and it is also a question of how the EU is to be able to develop a global strategy for the development of the region .
+
+Epoch 08 | Train Loss: 3.9534 | Val Loss: 4.7491
+Processing Epoch 09: 100%|██████████| 3334/3334 [32:56<00:00,  1.69it/s, loss=4.044]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Watson (ELDR). - (EN) Olen kiitollinen komissaarille hänen vastauksestaan.
+    TARGET: Watson (ELDR). -1 am grateful to the Commissioner for his answer.
+ PREDICTED: Watson ( ELDR ). - I am grateful to the Commissioner for his reply .
+--------------------------------------------------------------------------------
+    SOURCE: Tässä vaikeassa Euroopan rakentamisessa - mihin kuuluu erilaisen yhteiskunnallis-taloudellisten ja po liittisten laskujen maksamista, jotta onnistuttaisiin yhden mukaistamaan kaikki kansat ja kaikki Euroopan elimet -on nyt Euroopan parlamentin hetki.
+    TARGET: It is the moment of the European Parliament in this difficult European construction when we must pay the various socioeconomic and political bills in order to achieve harmonisation among the peoples and institutions of Europe.
+ PREDICTED: The economic growth of this programme is a major obstacle to the development of the European Union .
+
+Epoch 09 | Train Loss: 3.8288 | Val Loss: 4.7865
+Processing Epoch 10: 100%|██████████| 3334/3334 [32:55<00:00,  1.69it/s, loss=3.889]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Ottaen huomioon komission huhtikuussa 1997 antaman ehdotuksen "valmisteluasiakirjaksi" haluan saada täsmennyksen siitä, millaiseksi komissio näkee laivanrakennusteollisuuden tulevaisuuden.
+    TARGET: In view of its draft paper of April 1997, how does the Commission see the future of the shipbuilding industry?
+ PREDICTED: In view of the above , the Commission ' s proposal for 1997 , in the course of 1997 , will the Commission take the appropriate measures to improve the situation in the future .
+--------------------------------------------------------------------------------
+    SOURCE: Puhemies. - Bangemann pyytää puheenvuoroa.
+    TARGET: President. - Mr Bangemann has asked to speak.
+ PREDICTED: President . - Thank you , Mr Bangemann .
+
+Epoch 10 | Train Loss: 3.7065 | Val Loss: 4.8267
+Processing Epoch 11: 100%|██████████| 3334/3334 [32:57<00:00,  1.69it/s, loss=3.692]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Etämyynti
+    TARGET: Distance contracts
+ PREDICTED: Distance selling
+--------------------------------------------------------------------------------
+    SOURCE: Miten hakulomakkeet saadaan käyttöön
+    TARGET: ANNEX 6 - How to access the Application forms
+ PREDICTED: How can the system be used ?
+
+Epoch 11 | Train Loss: 3.5886 | Val Loss: 4.8806
+Processing Epoch 12: 100%|██████████| 3334/3334 [32:58<00:00,  1.69it/s, loss=3.476]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Oikeusasioita ja kansa laisten oikeuksia käsittelevän valiokunnan lausunnossa korostetaan yleisestä näkökulmasta sitä, että suojeltavia legitiimejä etuja ovat paitsi teollisuuden edut niin ennen kaikkea myös kuluttajien edut.
+    TARGET: Legislation needs to be introduced with care, and markets should be established on a reciprocal basis.
+ PREDICTED: The Committee on Legal Affairs and Citizens ' Rights has drawn attention to the fact that the issue is not only an urgent matter , but also that the Commission has to be informed of the seriousness of the matter .
+--------------------------------------------------------------------------------
+    SOURCE: Tempus-tiedotuspiste (Uusissa itsenäisissä valtioissa ja Mongoliassa)
+    TARGET: Tempus Information Point (in NIS and Mongolia)
+ PREDICTED: Tempus Information Point National Tempus Information Point Centre ( TACIS and Social Policy )
+
+Epoch 12 | Train Loss: 3.4734 | Val Loss: 4.9466
+Processing Epoch 13: 100%|██████████| 3334/3334 [33:01<00:00,  1.68it/s, loss=2.996]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Vaadimme myös, että pitkällä aikavälillä suhdetta kansainväliseen oikeuteen sovelletaan myös unionin toiseen ja kolmanteen pilariin.
+    TARGET: I would like to thank him for his helpful and considerate cooperation and to wish him all the best for his new post.
+ PREDICTED: We also know that the of the old of the of the of the and the in the Union will be in the near future .
+--------------------------------------------------------------------------------
+    SOURCE: Useita yhteisön toimivaltaan kuuluvia aiheita, kuten kalastusta, ei voitu kuitenkaan käsitellä, koska komissio ei ollut saanut neuvostolta vielä sitä valtuutusta, jota se oli pyytänyt.
+    TARGET: Under this principle aU suitable candidates are treated equaUy and aU members of the Commission's staff have the same possibiUties for career development.
+ PREDICTED: Several Community measures were taken , as they were , but they were not sufficient , because the Commission had not been able to take account of it .
+
+Epoch 13 | Train Loss: 3.3620 | Val Loss: 5.0125
+Processing Epoch 14: 100%|██████████| 3334/3334 [33:03<00:00,  1.68it/s, loss=3.200]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Odotamme Kyproksen miehityksen päättymistä ja odotamme, että ihmisoikeustilanne paranee ja demokratia lisääntyy.
+    TARGET: Dupuis (ARE). ­ (FR) Mr President, I am not one of those who like Mrs Green likes nothing better than taking potshots at Turkey.
+ PREDICTED: The WTO was hoping for a new and effective response to the human rights situation and a resolution of the conflict .
+--------------------------------------------------------------------------------
+    SOURCE: Tilien korkotuotto oli vuonna 1995: 47 117,03 ecua
+    TARGET: Received interest on the current account in 1995 amounted to ECU 47 117.03
+ PREDICTED: was granted in 1995 to 1 December 1995 :
+
+Epoch 14 | Train Loss: 3.2547 | Val Loss: 5.0842

@@ -1,0 +1,185 @@
+Using device: cuda
+Max length of source sentence: 222
+Max length of target sentence: 269
+Total parameters: 85366171
+No model to preload, starting from scratch
+Processing Epoch 00: 100%|██████████| 3334/3334 [21:50<00:00,  2.54it/s, loss=5.724]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Mitä Eurooppa voi tehdä auttaakseen Algerian kansaa jälleenrakentamisessa?
+    TARGET: This means being open and accommodating.
+ PREDICTED: The Commission is not a very important point .
+--------------------------------------------------------------------------------
+    SOURCE: Tarkastuksia on tehostettava. Epäiltyjen petosten tutkimukset on hoidettava niin tehokkaasti, että rikollisliigat pelästyvät.
+    TARGET: This report is all about the Single Market, and most of our citizens would have assumed that the Single Market was actoaUy work ing in a way that demonstrated that none of this could happen.
+ PREDICTED: The Commission is not a very important point .
+
+Epoch 00 | Train Loss: 5.8933 | Val Loss: 5.4007
+Processing Epoch 01: 100%|██████████| 3334/3334 [21:52<00:00,  2.54it/s, loss=4.705]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Neuvoston yhteisessä kannassa, johon sisältyy suurin osa komission hylkäämistä parlamentin muutoksista, mahdol listetaan postialan vapauttaminen, mutta tosiasiallisesti ainoastaan rajoitetusti.
+    TARGET: Thus, article 7 puts cross border service and direct mail in the area of reserved services until at least 2003.
+ PREDICTED: The Commission has been able to take a decision on the Commission , and the Commission has been able to take place in the Council ' s opinion on the Commission ' s proposal .
+--------------------------------------------------------------------------------
+    SOURCE: Niitä säännellään neuvoston asetuksella, joka astui voimaan vuonna 1990 ja jonka voimassaolon piti lakata joulukuussa 1996.
+    TARGET: They are covered by a Council regulation that was established in 1990 and was due to expire in December 1996.
+ PREDICTED: The Commission has been able to take account of the proposals for the Commission and the Commission .
+
+Epoch 01 | Train Loss: 5.2208 | Val Loss: 5.1041
+Processing Epoch 02: 100%|██████████| 3334/3334 [21:48<00:00,  2.55it/s, loss=5.002]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: On valitettavaa, että he sortuivat henkilökohtaisiin syytöksiin, vaikka mietintöni heijastaa pitkälti alueiden ihmisten näkökantoja.
+    TARGET: It is sad they resorted to personal attacks when my report very much reflects the views of people in the regions.
+ PREDICTED: The Commission is aware of the need to ensure that the European Union is to ensure that the necessary measures are taken .
+--------------------------------------------------------------------------------
+    SOURCE: Komissio on antanut lausuntonsa asiasta ja edistänyt tällaisen määräyksen lisää mistä.
+    TARGET: There will be a call for projects that will be launched very soon and this call for projects will be published in the information newsletter of the Year.
+ PREDICTED: The Commission has been informed of the Commission and the Commission .
+
+Epoch 02 | Train Loss: 4.9312 | Val Loss: 4.9407
+Processing Epoch 03: 100%|██████████| 3334/3334 [21:49<00:00,  2.55it/s, loss=4.830]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Lisäksi olen pettynyt komission kantaan koskien polttoaineiden rajoitettua hinnannousua.
+    TARGET: As a Swede, 1 see the long distances between Sweden and the large continental markets as a great disadvantage to competition.
+ PREDICTED: I would like to thank the rapporteur for his report on the Commission ' s proposal for a directive on the protection of the environment .
+--------------------------------------------------------------------------------
+    SOURCE: Kun jotkut jäsenvaltiot 36. artiklan nojalla yrittivät rajoittaa Ison­Britannian tuotteiden maahantuon­tia, komissio puuttui asiaan, ja uhkasi jopa haastaa jäsen­valtioita tuomioistuimeen.
+    TARGET: For reasons of principle, Parliament should always make efforts to use a rapporteur who has no interest whatsoever in the issue under discussion.
+ PREDICTED: In the case of the Member States , the Commission has made a clear distinction between the Member States and the Commission .
+
+Epoch 03 | Train Loss: 4.7206 | Val Loss: 4.8516
+Processing Epoch 04: 100%|██████████| 3334/3334 [21:51<00:00,  2.54it/s, loss=4.651]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Toistan, että nyt pyrimme saamaan selville, onko edellisen istunnon pöytäkirjasta huomautettavaa.
+    TARGET: I repeat that I want to know if there are any comments about the minutes of the previous part-session.
+ PREDICTED: I am not going to see that the Dutch presidency has been able to accept the proposal .
+--------------------------------------------------------------------------------
+    SOURCE: Miksi riskeerata voitto, kun tilisiirto tavaroiden tai palve-
+    TARGET: The opposite is the truth! You know that there are no health criteria.
+ PREDICTED: We have to do so , but we can do so in the past that the goods are not used to be able to be able to do so .
+
+Epoch 04 | Train Loss: 4.5447 | Val Loss: 4.8050
+Processing Epoch 05: 100%|██████████| 3334/3334 [21:52<00:00,  2.54it/s, loss=4.383]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: B4-0198/97 Colajanni ja Terrón i Cusí PSE-ryhmän puolesta Israelin hallituksen Jerusalemin rakennusprojektin hyväksymisestä;
+    TARGET: B4-0233/97 by Mr Pradier and Mr Vandemeulebroucke, on behalf of the Group of the European Radical Alliance, on Israel's policy of new settle ments;
+ PREDICTED: B4 - / 97 by Mr Hory and others , on behalf of the Group of the European Radical Alliance , on the situation in Cambodia ;
+--------------------------------------------------------------------------------
+    SOURCE: Olen esittänyt muutamia tarkistuksia ja haluaisin pyytää kannatusta tarkistuksille 13 ja 14, kuten myös Millerin tarkistukselle 1, jossa vaaditaan nollaverokantaa tietyille tavaroille ja palveluille, kuten lasten vaatteille, kengille, elintarvikkeille, lääketieteellisille välineille, kirjoille, sosiaalisille palveluille jne.
+    TARGET: The move towards a definitive VAT system based on the principle of origin will be a long process so I would suggest that .we should not forget that we can improve matters in the short term.
+ PREDICTED: I would like to thank the rapporteur for his excellent work , and I would also like to thank the rapporteur for his work , which is not a good idea , but also for the quality of the work of the group .
+
+Epoch 05 | Train Loss: 4.3886 | Val Loss: 4.7852
+Processing Epoch 06: 100%|██████████| 3334/3334 [21:52<00:00,  2.54it/s, loss=4.280]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Äänestys toimitetaan tänään klo 17.30.
+    TARGET: It will give a sign of encouragement to peoples whose survival is at risk.
+ PREDICTED: The vote will take place tomorrow at 12 noon .
+--------------------------------------------------------------------------------
+    SOURCE: Eilen tosin hyväksyttiin vankka päätöslauselma, jossa nykyinen komissio asetettiin selkä seinää vasten. Hyväksyin tämän päätöslauselman ja äänestin sen puolesta.
+    TARGET: I even recommended my group to support the censure vote, last week, and I regret toe fact toat toe principal groups in this Parliament - including my own - thought it better not to censure the Commission with a clear, massive and immediate vote.
+ PREDICTED: The Commission has been informed of the fact that the European Parliament has been able to take a very active role in this process , and I hope that the Council will take the necessary steps to ensure that the European Parliament will be taken in this direction .
+
+Epoch 06 | Train Loss: 4.2396 | Val Loss: 4.7909
+Processing Epoch 07: 100%|██████████| 3334/3334 [21:50<00:00,  2.54it/s, loss=4.292]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Puhemies. - Seuraavana asiana on yhteiskeskustelu seuraavista mietinnöistä:
+    TARGET: President. ­ The Minutes from yesterday's sitting have been distributed.
+ PREDICTED: President - The next item is the joint debate on the following reports :
+--------------------------------------------------------------------------------
+    SOURCE: Tämä hahmotelma havainnollistaa, kuinka tärkeä tämänpäiväinen mietintö kaavaillusta Eu roopan unionin järjestelmästä C02-päästöjen ja muiden kasvihuonekaasupäästöjen tarkkailemiseksi ja kartoittami seksi on.
+    TARGET: This is why I am happy to repeat that there is a wide consensus on the need to inform public opinion, which is greatly concerned about the effects of global warming and the concentration and accumulation of gases which increase the greenhouse effect.
+ PREDICTED: This was a very important issue , and it was also a matter of urgency to the European Union .
+
+Epoch 07 | Train Loss: 4.0992 | Val Loss: 4.8109
+Processing Epoch 08: 100%|██████████| 3334/3334 [21:53<00:00,  2.54it/s, loss=3.735]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Arvoisa puhemies, ehkä tässä yhteydessä voisin pyytää teitä ja kollegojanne varapuhemiesten ja puhemiehen välityksellä tarkastelemaan 115 artiklaa, jota ei ole sovellettu riittävän tiukasti ja jyrkkäotteisesti.
+    TARGET: In this context, perhaps I could refer .you, Mr President, and your colleagues via the Vice-Presidents and the President, to Rule 115, which is not sufficiently severely and rigorously applied.
+ PREDICTED: Mr President , I should like to make a brief comment on the results of the election and the Vice - President and the other Members of this House , which is not a matter of urgency .
+--------------------------------------------------------------------------------
+    SOURCE: Teemme kovasti töitä, jotta voimme tutkia kaikkien asianomaisten osapuolten kanssa työaikaa koskevaa ristiriitaista kysymystä, jonka muun muassa Seal otti esille, ja tuemme myös toimenpiteitä, joilla varmistetaan matkustajalentokoneiden matkustamohenkilökunnan yhdenmukainen ja perusteellinen koulutus.
+    TARGET: We are working hard to examine with all relevant parties the controversial issue of duty time, a matter raised by Mr Seal, amongst others, and also to promote actions to ensure consistent and thorough training of cabin crew on all passenger aircraft.
+ PREDICTED: The Union must also be able to take into account the problems which have been raised by the Member States and the Commission in the field of social protection , and the question of the environment and the promotion of human rights in the region .
+
+Epoch 08 | Train Loss: 3.9632 | Val Loss: 4.8420
+Processing Epoch 09: 100%|██████████| 3334/3334 [21:51<00:00,  2.54it/s, loss=4.156]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Enää ei ihmisen elinympäristöä muokkaisi hänen omat tarpeensa, vaan päinvastoin, ihmisten tarpeet alistettaisiin palvelemaan tehokkaimmilla ja halvimmilla tavoilla niitä, jotka hänen elinympäristöään rajaavat.
+    TARGET: Mr Bangemann, we must however reject the Commission's current policy of allowing the Member States to apply different aid systems since this leads to distortions of competition within the Community and even carries the risk that EU shipyards will fly the flag of another Euro pean Union country if, for example, the fiscal system is more attractive in the Netherlands than in another large Member State.
+ PREDICTED: I shall not dwell on the merits of this report , but I do not believe that the Commission ' s services are the best possible way of ensuring that the information society is kept to the public .
+--------------------------------------------------------------------------------
+    SOURCE: Saksan taloushallinnon edustajat vahvistivat myös, että he olivat vastustaneet tätä korotusta silloin kun asiaa käsiteltiin komission kanssa.
+    TARGET: The representatives of the Federal Financial Administration also confirmed that they had opposed
+ PREDICTED: The delegation was also informed by the delegation of the German government in order to make a contribution to the European Commission ' s preliminary draft budget .
+
+Epoch 09 | Train Loss: 3.8316 | Val Loss: 4.9024
+Processing Epoch 10: 100%|██████████| 3334/3334 [21:50<00:00,  2.54it/s, loss=3.506]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Pelkäänpä, että todellisuus edellyttää meiltä hieman yksinkertaisempaa lähestymistapaa.
+    TARGET: We cannot claim that the citizen should be at the heart of the construction of Europe and then leave out culture and all the values - humanism, democracy, human rights, tolerance - on which the Euro pean model of society is based.
+ PREDICTED: ( Parliament adopted the resolution )
+--------------------------------------------------------------------------------
+    SOURCE: Wohlfart tista rauhanprosessia Yhdistyneiden kansakuntien ihmisoikeuksien edustajana toimivan Mary Robinsonin mahdollisella myötävaikutuksella?
+    TARGET: Wohlfart linked to the European Union by an association agree ment, in this instance Bosnia-Herzegovina, Croatia, the Federal Republic of Yugoslavia, the former Yugoslav Republic of Macedonia and Albania.
+ PREDICTED: Wohlfart , President - in - Office of the Council . - ( FR ) Mr President , ladies and gentlemen , I would like to thank the Council for the answer to the questions put by the honourable Member that I have just received from the European Parliament for the reply that they have given to the question put by the honourable Member that the European Union is not a matter of urgency .
+
+Epoch 10 | Train Loss: 3.7059 | Val Loss: 4.9713
+Processing Epoch 11: 100%|██████████| 3334/3334 [21:57<00:00,  2.53it/s, loss=3.505]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Minulla on kaksi kysymystä, toinen tästä aiheesta ja toinen liittyen Stewart-Clarkin saamaan vastaukseen.
+    TARGET: Patijn. - (NL) To take the last question first, I think the solution to the Kashmir question has to be sought by direct talks between the governments concerned.
+ PREDICTED: I now have two questions to make .
+--------------------------------------------------------------------------------
+    SOURCE: seen sekä demokratian vakauttamiseen.
+    TARGET: development as well as democratic stabilisation.
+ PREDICTED: And that is what we are trying to do .
+
+Epoch 11 | Train Loss: 3.5830 | Val Loss: 5.0190
+Processing Epoch 12: 100%|██████████| 3334/3334 [22:05<00:00,  2.52it/s, loss=3.543]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Liian usein se jää tekemättä, koska pelätään saavutettujen sosiaalietujen menettämistä.
+    TARGET: Too often people give up for fear of losing acquired social security entitlement.
+ PREDICTED: Too often the government is not allowed to grant the quotas to the growers .
+--------------------------------------------------------------------------------
+    SOURCE: Juuri tämä on ^e asia, josta meidän oikeastaan pitäisi päästä yhteisymmärrykseen.
+    TARGET: And that is why we said we must clear up the misunderstanding about these traditional industries not having a future.
+ PREDICTED: We must ensure that this is a very serious problem , and that we must also have a new case to come from the British Government .
+
+Epoch 12 | Train Loss: 3.4628 | Val Loss: 5.0975
+Processing Epoch 13: 100%|██████████| 3334/3334 [21:50<00:00,  2.54it/s, loss=3.438]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Maastricht lisäsi demokratiavajetta.
+    TARGET: Maastricht has aggravated the democratic deficit.
+ PREDICTED: We are discussing the Maastricht Treaty .
+--------------------------------------------------------------------------------
+    SOURCE: Jos saamme Amsterdamissa aikaan sopimuksen - ja vielä kerran, tähdet ovat suotuisat - se voi olla, kuten joku teistä sanoi, vähemmän kuin on toivottu.
+    TARGET: Using images is not inoffensive: images plague us sometimes or come back to haunt us, so that we can even end up wondering why on earth we said this or that. Mrs Roth declares that all citizens want to cook.
+ PREDICTED: I have to say that we have had some good news from the Commissioner and we have been able to discuss this matter further .
+
+Epoch 13 | Train Loss: 3.3495 | Val Loss: 5.1771
+Processing Epoch 14: 100%|██████████| 3334/3334 [21:46<00:00,  2.55it/s, loss=3.276]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Olen hieman hämmästynyt, koska olen korostanut parlamentin yksiköille, että komissaarin läsnäolo parlamentissa on välttämätöntä.
+    TARGET: It is quite clear that the decisive factor with regard to the rights of family members to immigration and residence under Community law is that the EU citizen is exercising or has exercised the right to freedom of movement.
+ PREDICTED: I would like to start by saying that since I believe that the Commissioner has a certain amount of flexibility in this House , it is important that Parliament should take a decision in this area .
+--------------------------------------------------------------------------------
+    SOURCE: Ulkoasiain valiokunnan puolesta esittämässäni mietinnössä olevat ehdotukset tukevat näitä tavoitteita, mutta haluaisin vielä niiden lisäksi korostaa eräitä muita asioita.
+    TARGET: The various proposals contained in the report I am presenting on behalf of the Committee on External Affairs are a step in this direction, but there is one more point I would like to emphasise.
+ PREDICTED: The vote on the report by Mr Tindemans on behalf of the Committee on Foreign Affairs , Security and Defence Policy , also proposes a number of points which have already been made .
+
+Epoch 14 | Train Loss: 3.2398 | Val Loss: 5.2808
