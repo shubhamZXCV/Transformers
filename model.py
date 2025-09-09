@@ -48,9 +48,9 @@ def apply_rope(x, sin, cos):
     # x: (batch, h, seq_len, d_k)
     # sin, cos: (seq_len, d_k)
     # Only works if d_k is even
-    print("x shape:", x.shape)
-    print("sin shape:", sin.shape)
-    print("cos shape:", cos.shape)
+    # print("x shape:", x.shape)
+    # print("sin shape:", sin.shape)
+    # print("cos shape:", cos.shape)
     x1 = x[..., ::2]
     x2 = x[..., 1::2]
     sin = sin.unsqueeze(0).unsqueeze(0)  # (1, 1, seq_len, d_k//2)
@@ -80,15 +80,28 @@ class RelativePositionBias(nn.Module):
         super().__init__()
         self.num_heads = num_heads
         self.max_seq_len = max_seq_len
+        # Table for relative positions in range [-(max_seq_len-1), +(max_seq_len-1)]
         self.relative_bias = nn.Parameter(torch.zeros(num_heads, 2 * max_seq_len - 1))
-        nn.init.zeros_(self.relative_bias)
+        nn.init.zeros_(self.relative_bias)  # optional, can also use normal init
 
-    def forward(self, seq_len):
-        # Returns (num_heads, seq_len, seq_len)
-        context_position = torch.arange(seq_len, dtype=torch.long)[:, None]
-        memory_position = torch.arange(seq_len, dtype=torch.long)[None, :]
-        relative_position = memory_position - context_position + self.max_seq_len - 1
-        bias = self.relative_bias[:, relative_position]
+    def forward(self, seq_len_q, seq_len_k):
+        """
+        Returns bias of shape (num_heads, seq_len_q, seq_len_k)
+        """
+        # positions of queries and keys
+        q_pos = torch.arange(seq_len_q, dtype=torch.long)[:, None]  # (seq_len_q, 1)
+        k_pos = torch.arange(seq_len_k, dtype=torch.long)[None, :]  # (1, seq_len_k)
+
+        # relative position: key index - query index
+        relative_position = k_pos - q_pos   # (seq_len_q, seq_len_k), range [-(L-1), L-1]
+
+        # shift by max_seq_len - 1 to index into bias table
+        relative_position += self.max_seq_len - 1
+        # clamp in case seq_len_q or seq_len_k > max_seq_len
+        relative_position = relative_position.clamp(0, 2 * self.max_seq_len - 2)
+
+        # lookup biases for each head
+        bias = self.relative_bias[:, relative_position]  # (num_heads, seq_len_q, seq_len_k)
         return bias
     
 class PositionalEncoding(nn.Module):
@@ -179,15 +192,21 @@ class MultiHeadAttentionBlock(nn.Module):
 
         # RoPE logic
         if self.use_rope and self.rope_module is not None:
-            seq_len = q.size(1)
-            sin, cos = self.rope_module(seq_len)  # (seq_len, d_k//2)
-            query = apply_rope(query, sin, cos)
-            key = apply_rope(key, sin, cos)
+            # For query
+            seq_len_query = query.shape[2]
+            sin_query, cos_query = self.rope_module(seq_len_query)
+            query = apply_rope(query, sin_query, cos_query)
+            # For key
+            seq_len_key = key.shape[2]
+            sin_key, cos_key = self.rope_module(seq_len_key)
+            key = apply_rope(key, sin_key, cos_key)
 
         relative_bias = None
+        # In MultiHeadAttentionBlock.forward, for cross-attention:
         if self.use_relative_bias:
-            seq_len = q.size(1)
-            relative_bias  = self.relative_bias(seq_len)
+            seq_len_q = q.size(1)      # target sequence length
+            seq_len_k = k.size(1)      # source sequence length
+            relative_bias = self.relative_bias(seq_len_q, seq_len_k)
 
 
         # Calculate attention
@@ -298,7 +317,6 @@ class Identity(nn.Module):
 def build_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int, tgt_seq_len: int, d_model: int=512, N: int=6, h: int=8, dropout: float=0.1, d_ff: int=2048,config=None) -> Transformer:
 
     d_k = d_model // h
-
     # Create the embedding layers
     src_embed = InputEmbeddings(d_model, src_vocab_size)
     tgt_embed = InputEmbeddings(d_model, tgt_vocab_size)
@@ -345,6 +363,7 @@ def build_transformer(src_vocab_size: int, tgt_vocab_size: int, src_seq_len: int
     for _ in range(N):
         decoder_self_attention_block = MultiHeadAttentionBlock(d_model, h, dropout , use_relative_bias , tgt_seq_len,use_rope , rope_module_tgt)
         decoder_cross_attention_block = MultiHeadAttentionBlock(d_model, h, dropout,use_relative_bias ,src_seq_len,use_rope,rope_module_src)
+        
         feed_forward_block = FeedForwardBlock(d_model, d_ff, dropout)
         decoder_block = DecoderBlock(d_model, decoder_self_attention_block, decoder_cross_attention_block, feed_forward_block, dropout)
         decoder_blocks.append(decoder_block)

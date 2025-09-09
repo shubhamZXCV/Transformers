@@ -2,20 +2,21 @@ from pathlib import Path
 
 def get_config():
     return {
-        "batch_size": 4,
-        "num_epochs": 10,
+        "batch_size":24,
+        "num_epochs":15,
         "lr": 10**-4,
-        "seq_len": 350,
+        "seq_len": 270,
         "d_model": 512,
         "datasource": 'EUbookshop',
         "lang_src": "fi",
         "lang_tgt": "en",
-        "model_folder": "weights_rope",
+        "model_folder": "weights_relbias",
         "model_basename": "tmodel_",
         "preload": None,
         "tokenizer_file": "tokenizer_{0}.json",
-        "experiment_name": "runs/tmodel_rope",
-        "positional_encoding": "rope",  # Options: "rope", "relative_bias" ,  "absolute"
+        "experiment_name": "runs/tmodel_relbias",
+        "positional_encoding": "relative_bias",  # Options: "rope", "relative_bias" ,  "absolute"
+        "decoding_strategy":"beam" # greed , beam , topk
     }
 
 def get_weights_file_path(config, epoch: str):
