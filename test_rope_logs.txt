@@ -1,0 +1,53 @@
+Using device: cuda
+Max length of source sentence: 222
+Max length of target sentence: 269
+Total parameters: 85288555
+Loading model checkpoint: EUbookshop_weights_rope/tmodel_06.pt
+
+--- Greedy Decoding ---
+Evaluating (greedy): 100%|██████████| 10000/10000 [1:11:38<00:00,  2.33batch/s]
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+SOURCE    : Euroopan tehtävänä on edistää kokonaisvaltaista politiikkaa, jonka avulla voidaan toimia muuttuneessa tilanteessa. Jotta tämä olisi mahdollista, jäsenvaltiot eivät voi välttyä perustavanlaatuisilta uudistuksilta, jotka ovat lyhyellä tähtäimellä tuskallisia.
+TARGET    : I think that Europe as a whole needs to start moving towards more flexible and individualized systems, as I am sure you will be glad to hear, Mr Bangemann, while at the same time respecting the principle of solidarity which forms toe basis of our European social model.
+PREDICTED : The European Union must be able to support the development of the information society , which is to be considered by the Member States , and that is why it is not possible to identify the best possible ways of creating new jobs .
+--------------------------------------------------
+SOURCE    : kuin koskaan tänä päivänä on myönnettävä, että mainoksen viesti on tarkkaan harkittu, suunniteltu, tarkoitettu vietteleväksi, omaksuttavaksi, liikuttamaan miljoonia ihmisiä tiettyyn suuntaan.
+TARGET    : The Commission encourages the exchange of information and experience between the Member States and between relevant national bodies.
+PREDICTED : It is a very important point that the EU should be able to fulfil its responsibilities in the field of environmental protection , including the environment , the environment and the environment .
+--------------------------------------------------
+
+✅ Corpus BLEU score (greedy decoding): 4.92
+
+--- Beam Search Decoding ---
+Evaluating (beam): 100%|██████████| 10000/10000 [5:59:35<00:00,  2.16s/batch]  
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+SOURCE    : En tiedä, osoit­taako tämä jotakin.
+TARGET    : Cast off your diffidence, Commissioners!
+PREDICTED : I do not know what is happening .
+--------------------------------------------------
+SOURCE    : Passi- ja turvapaikkapolitiikan yhdentyminen, ehdotus määräenemmistön valtuuttamiseksi näitä aiheita päätettäessä, passi- ja turvapaikkapolitiikan alistaminen Euroopan yhteisön tuomioistuimen alaisuuteen, oikeudellisten menetelmien tasapainottaminen, Schengenin liitteen lisääminen sopimuksiin ja toimeenpanovallan luovutus Europolille, jotta se vastustaisi kansainvälistä rikollisuutta; nämä ovat tärkeitä asioita.
+TARGET    : Article 119 on equal treatment for men and women, the Irish formula, equal pay for work of an equal value is, as we know, to be scrapped. Does that cost too much as well?
+PREDICTED : - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - the - the - the - -
+--------------------------------------------------
+
+✅ Corpus BLEU score (beam decoding): 4.61
+
+--- Top-k Sampling Decoding ---
+Evaluating (topk): 100%|██████████| 10000/10000 [1:18:42<00:00,  2.12batch/s]
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+SOURCE    : Veroja on alennettava, etenkin palkkatyöhön kohdistuvia välittömiä ja välillisiä veroja, joiden yhä raskaampi taakka vaikuttaa tuhoisasti työllisyyteen.
+TARGET    : Second consequence: the changing age structure of the population will lead to an increase in the demand for services and welfare transfers will probably weigh heavily on public expenditure.
+PREDICTED : The key factor of sustainable development in which it is for the Commission to carry out a number of different areas such as environmental measures will also help to protect the environment , with more effective training resources and work .
+--------------------------------------------------
+SOURCE    : Yhteistyö oikeusasiamiehen ja näiden toimielinten välillä on välttämätöntä Eurooppa-oikeu-den täsmällisen soveltamisen varmistamiseksi kaikilla unionin tasoilla.
+TARGET    : The work ahead will also benefit from cooperation with the European Parliament's Committee on Petitions, the national ombudsmen and parliamentary committees on petitions in the Member States, who play an important role in this area.
+PREDICTED : The European Ombudsman and other members of the Ombudsman have pointed out that the committee ' s position as such , for example , is based on a view to achieving a specific change in the current negotiations which , in the light of the political will , are to be considered for the future .
+--------------------------------------------------
+
+✅ Corpus BLEU score (topk decoding): 3.08

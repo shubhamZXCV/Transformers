@@ -1,0 +1,53 @@
+Using device: cuda
+Max length of source sentence: 222
+Max length of target sentence: 269
+Total parameters: 85366171
+Loading model checkpoint: EUbookshop_weights_relbias/tmodel_07.pt
+
+--- Greedy Decoding ---
+Evaluating (greedy): 100%|██████████| 10000/10000 [1:03:42<00:00,  2.62batch/s]
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+SOURCE    : Me olemme huomauttaneet myös siitä, että tämä määritelmäei päde aina, vaan meidän on tarkistettava tätä määritelmää aika ajoin.
+TARGET    : Firstly, the matter of what legal status the communication possesses or could perhaps create.
+PREDICTED : We are also in favour of a common market in which we are not able to achieve a common European policy .
+--------------------------------------------------
+SOURCE    : Haluan ilmaista syvän huolestuneisuuteni asiasta.
+TARGET    : European companies still experience problems in access ing the Japanese market.
+PREDICTED : I should like to thank the rapporteur for his work .
+--------------------------------------------------
+
+✅ Corpus BLEU score (greedy decoding): 4.67
+
+--- Beam Search Decoding ---
+Evaluating (beam): 100%|██████████| 10000/10000 [5:00:11<00:00,  1.80s/batch]  
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+SOURCE    : Käsittelen kysymykset järjestyksessä ja pyydän kunnianarvoisia parlamentin jäseniä suomaan minulle anteeksi, jos en annetun ajan kuluessa kykene vastaamaan kovin tarkasti kaikkiin kysymyksiin.
+TARGET    : I shall take the questions in order and I would ask members of the European Parliament to excuse me if, in the time allotted to me, I do not manage to answer with precision all of the questions put to me.
+PREDICTED : The vote will take place tomorrow at 12 noon .
+--------------------------------------------------
+SOURCE    : Ensimmäinen aihe ja ensimmäinen haaste on työllisyyttä käsittelevä huippukokous, jota aiomme valmistella tehokkaasti.
+TARGET    : We should like to see one specific decision taken in any event, namely that the active labour market policy should be focused in the first instance on the 18 to 30 million people who are out of work.
+PREDICTED : The debate is closed . The debate is closed .
+--------------------------------------------------
+
+✅ Corpus BLEU score (beam decoding): 4.78
+
+--- Top-k Sampling Decoding ---
+Evaluating (topk): 100%|██████████| 10000/10000 [1:07:10<00:00,  2.48batch/s]
+That's 100 lines that end in a tokenized period ('.')
+It looks like you forgot to detokenize your test data, which may hurt your score.
+If you insist your data is detokenized, or don't care, you can suppress this message with the `force` parameter.
+SOURCE    : Durumvehnän osalta on mielestäni aiheellista, myös ehdotusten järkiperäistämisen kannalta, ottaa käyttöön durumvehnän enimmäisviljelyala, joka vahvistetaan kullekin maalle ja jaetaan alueellisella tasolla.
+TARGET    : In a few days' time you are going to vote on this prices package and I have just received the draft opinion.
+PREDICTED : In this context , we propose to submit a proposal to the Council , with a new budget for 1998 , a European decision on the basis for the accession process .
+--------------------------------------------------
+SOURCE    : Evoluutio ja siihen liittyvä tutkimus tarvitsee enemmän aikaa kuin viisi tai kuusi vuotta voidakseen saada yleissilmäyksen geneettisesti muunnettujen mikroorganismien sovellukseen liittyviin seuraamuksiin.
+TARGET    : The development of this technology and the associated research has to go on for more than a mere five or six years before we can gain an overview of the possible results of the use of genetically modified microorganisms.
+PREDICTED : For that purpose and , at the same time - to bring about a regulation from which to date , in order to bring about a competitive market for consumers , then it will be possible to use a licence for food products in all parts of the sector .
+--------------------------------------------------
+
+✅ Corpus BLEU score (topk decoding): 3.18
