@@ -62,7 +62,7 @@ But in practice:
 |**RELATIVE BIAS**| 4.67 |4.78|3.18 |
 
 
-Perfect — you already have BLEU scores for **Greedy, Beam, and Top-K decoding** with **RoPE** and **Relative Bias**. Let’s analyze systematically 👇
+
 
 ---
 
