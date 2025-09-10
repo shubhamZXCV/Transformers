@@ -1,0 +1,117 @@
+Using device: cuda
+Device name: NVIDIA GeForce GTX 1080 Ti
+Device memory: 10.90374755859375 GB
+Max length of source sentence: 222
+Max length of target sentence: 269
+Total parameters: 85288555
+No model to preload, starting from scratch
+Processing Epoch 00: 100%|██████████| 3334/3334 [32:48<00:00,  1.69it/s, loss=5.613]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Pery (PSE), kirjallisesti. - (FR) Vilvoorden tehtaan sulkeminen on samanlainen draama kuin monet muutkin tehtaiden sulkemiset.
+    TARGET: Sjöstedt and Svensson (GUE/NGL), in writing. - (SV) We have voted in favour of the resolution opposing the shutting down of the Renault factory in VUvoorde.
+ PREDICTED: The Commission ' s report is a very important point of view that the Commission has been able to take a new basis .
+--------------------------------------------------------------------------------
+    SOURCE: Langenhagen (PPE). - (DE) Arvoisa neuvoston puheen johtaja, vastauksenne on mielestäni täysin riittämätön.
+    TARGET: It has also been claimed that nets that are 2.5 km in length could not be profitable.
+ PREDICTED: The Commission ' s report ( A4 - C4 - C4 - ROBLES President - ( SV ) Mr President , ladies and gentlemen , I would like to thank the rapporteur for the report .
+--------------------------------------------------------------------------------
+Processing Epoch 01: 100%|██████████| 3334/3334 [32:49<00:00,  1.69it/s, loss=4.803]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Parlamentti on aina tukenut vahvasti ja johdonmukaisesti Pohjois-Irlannin rauhanprosessia. Siten olette ilmaisseet asian, joka on ollut parlamentin pysyvä poliittinen kanta. (')
+    TARGET: This Parliament has always steadfastly and consistently supported the peace process in Northern Ireland, so what you have just said describes the policy this House has always followed ( > ).
+ PREDICTED: Parliament has been able to take the opportunity to make a clear point of view of the European Parliament ' s proposal for a Council Decision on the basis of a resolution on the basis of the Council ' s proposal .
+--------------------------------------------------------------------------------
+    SOURCE: En ole varma, että saamme siitä vain kiitosta, mutta mielestäni se on tärkeää, jotta opimme siitä tulevaisuutta varten.
+    TARGET: We in the European Parliament will be happy to take part in this work, even though we will not yet have the new codecision powers under the Amsterdam Treaty.
+ PREDICTED: I am not going to say that the Commission has not been able to make it clear that the Commission has not been able to take the opportunity to make it clear that the Commission has not been able to take the opportunity to make it clear that it is not a good thing .
+--------------------------------------------------------------------------------
+Processing Epoch 02: 100%|██████████| 3334/3334 [32:51<00:00,  1.69it/s, loss=4.795]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Toimenpiteisiin sisältyy työ varhaisnuorten kanssa huumeiden kysynnän syntymisen ehkäisemiseksi sekä korvikealneohjelmat, joissa huumeista riippuvaiset saavat huumeita lääkärin määräyksestä. Ehkäisy, kenttätyö, hoito, kuntoutus ja haittojen vähentäminen ovat myös kaikki kysynnän vähentämiseen tähtääviä toimenpiteitä.
+    TARGET: ► Previously prevention featured fear arousal, pun­ishment and prohibition; now the emphasis is less on dysfunction and deficiency, more on empower­ment and strengthening. ► A major trend is the increasing professionalisation of prevention workers due to increases in the amount of specialised training and posts.
+ PREDICTED: The new technologies are also important to the development of the internal market and the development of the internal market , and the development of the internal market , the development of the internal market , the development of the environment and the development of the environment , the environment and the environment .
+--------------------------------------------------------------------------------
+    SOURCE: Uskon, että parlamentti ottaa huomenna uuden askeleen tähän suuntaan.
+    TARGET: This is the only way in which we can try to defeat the terrorist phenomenon: it is one of the great challenges of our times.
+ PREDICTED: I am pleased to say that the European Parliament has not yet been able to take a decision on the agenda .
+--------------------------------------------------------------------------------
+Processing Epoch 03: 100%|██████████| 3334/3334 [32:53<00:00,  1.69it/s, loss=4.777]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Diplomitulkki/kääntäjä.
+    TARGET: Qualified interpreter/translator.
+ PREDICTED: / .
+--------------------------------------------------------------------------------
+    SOURCE: Mutta jos kohta päätetään myös ulkopolitiikasta vastaavan pää sihteerin nimittämisestä neuvostoon, niin toisaalta vahvistetaan komission puheenjohtajan asemaa ja samalla heikennetään komission asemaa.
+    TARGET: But to then immediately decide to appoint a secretary-general for foreign policy at the Council means that while the Commission President's position has been strengthened, the position of the Commission itself has been weakened.
+ PREDICTED: It is also important to note that the Commission ' s proposal for a Council Decision on the Commission ' s proposal to be taken into account , and that the Commission has also made a proposal for a Council Decision on the Commission ' s proposal .
+--------------------------------------------------------------------------------
+Processing Epoch 04: 100%|██████████| 3334/3334 [32:56<00:00,  1.69it/s, loss=4.513]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Kysymyksen 91 esittäjä MaLou Lindholm (H-0535/97)
+    TARGET: Question No 91 by MaLou Lindholm (H-0535/97)
+ PREDICTED: Question No 49 by Mark Killilea ( H - / 97 ) Subject : of the European Union ' s nuclear power stations
+--------------------------------------------------------------------------------
+    SOURCE: Kokonaisapuraha jaetaan vuotuisiin rahamääriin, jotka maksetaan sopimuskumppanille sen mukaan, miten hankkeen hyväksytyn tavoitteen saavuttamisessa on edistytty.
+    TARGET: The total grant will be split into annual amounts, which will be paid to the contractor subject to the progress made towards the approved project objective.
+ PREDICTED: The following amounts to ECU 1 million , which are ECU 1 million , is ECU 1 million for the project .
+--------------------------------------------------------------------------------
+Processing Epoch 05: 100%|██████████| 3334/3334 [32:58<00:00,  1.69it/s, loss=3.920]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Todistukseksi passituksen suorittamisesta tunnustetaan ainoastaan määrätoimipaikan niin sanottu vastaanottokuitti.
+    TARGET: Absence of a return copy may indicate abuse by third parties to the detriment of the principal.
+ PREDICTED: The principal ' s guarantee is that the principal ' s guarantee is that the principal is aware of the problems of fraud .
+--------------------------------------------------------------------------------
+    SOURCE: Euroopan tullijärjestelmä on täyttänyt tarkoituksensa jo kauan aikaa, mutta se ei ole muuttunut tarpeeksi ajan vaatimusten mukaisesti.
+    TARGET: The European Customs system has served its purposes for a long time, but has not changed enough with the passing of time.
+ PREDICTED: The European Union has a major role in the process of European integration but it is not possible to take the necessary steps to achieve this objective .
+--------------------------------------------------------------------------------
+Processing Epoch 06: 100%|██████████| 3334/3334 [32:58<00:00,  1.69it/s, loss=4.063]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Siten voidaankin kysyä, voiko se vaikuttaa työllistämiseen yhtä voimakkaasti kuin suorat investointitoimet.
+    TARGET: Myller (PSE). - (FI) Mr President, all too often regional authorities fail to make use of cultural opportunities as a source of employment and innovation. Only rarely is it
+ PREDICTED: The Commission will take the view that the measures taken to prevent the spread of the disease are not being taken into account .
+--------------------------------------------------------------------------------
+    SOURCE: Valiokunta päätti työnsä lopullisesti 6. päivä helmikuuta maratonistunnon jälkeen, jonka aikana käytiin läpi 250 tarkistusta.
+    TARGET: Our German colleagues, or more precisely Germany, has always been very supportive of Chiquita's position, probably because all the German poUtical parties were receiving backhanders from this multinational company.
+ PREDICTED: The committee responsible shall set up a committee responsible for the work of the committee responsible for the work carried out by the Committee on Budgets .
+--------------------------------------------------------------------------------
+Processing Epoch 07: 100%|██████████| 3334/3334 [32:57<00:00,  1.69it/s, loss=4.462]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Kysymys nro 40 jätetään väliin, koska sen esittäjä ei ole paikalla.
+    TARGET: Since its author is absent, Question No 40 lapses.
+ PREDICTED: The question is whether it is a matter of urgency , because it is not the question of the situation .
+--------------------------------------------------------------------------------
+    SOURCE: Puhetta ryhtyi johtamaan varapuhemies PERY
+    TARGET: Here the question of intellectual property and patenting creates great difficulties.
+ PREDICTED: IN THE CHAIR : MRS FONTAINE Vice - President
+--------------------------------------------------------------------------------
+Processing Epoch 08: 100%|██████████| 3334/3334 [32:57<00:00,  1.69it/s, loss=3.519]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Haluan tätä joka tapauksessa tosissani, en vain näinä parina viimeisenä puheenjohtajuutemme päivänä, vaan myös sen jälkeisenä aikana.
+    TARGET: I sincerely hope that we will, not just in these last few days of our presidency, but afterwards as well.
+ PREDICTED: I would therefore ask the Commission to consider the matter again , since it is not possible to adopt a decision on the basis of the Commission ' s proposal .
+--------------------------------------------------------------------------------
+    SOURCE: Torres Marques (PSE), kirjallisesti. - (PT) Ensimmäistä Tillichin mietintöä oli mahdotonta hyväksyä, koska siitä puuttui kokonaan yhteisvastuullisuuden ja taloudellisen ja yhteiskunnallisen yhdentymisen päämäärät.
+    TARGET: * the condemnation of the negative attitude of the CouncU in relation to social policy (compulsory approval by unanimity) and the decision to include pUot projects on social exclusion, toe elderly, the disabled and families, as well as strengthening activities de signed to help with the execution of a sexual equality policy;
+ PREDICTED: Torres Marques ( PSE ), in writing . - ( PT ) The European Union has not yet been able to achieve a common foreign and security policy .
+--------------------------------------------------------------------------------
+Processing Epoch 09: 100%|██████████| 3334/3334 [33:03<00:00,  1.68it/s, loss=3.569]
+stty: 'standard input': Inappropriate ioctl for device
+--------------------------------------------------------------------------------
+    SOURCE: Tämä on aina ollut meidän vaatimuksemme.
+    TARGET: This was at the start of the disease.
+ PREDICTED: I am not happy to support this .
+--------------------------------------------------------------------------------
+    SOURCE: En nyt kuitenkaan usko, että Euroopan kansalaiset hyötyvät tästä kestovaatimukseesta perustaa uusia viranomaisia EU:n hallintoon.
+    TARGET: I am particularly thinking of the employment difficulties facing young graduates of naval colleges and the fall in enrolments at naval schools.^
+ PREDICTED: I am not sure that the European Parliament will support the idea of imposing a new system of legislation on EU law .
+--------------------------------------------------------------------------------
